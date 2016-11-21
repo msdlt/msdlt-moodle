@@ -1,0 +1,42 @@
+[submodule "filter/generico"]
+	path = filter/generico
+	url = https://github.com/justinhunt/moodle-filter_generico
+[submodule "lib/editor/atto/plugins/generico"]
+	path = lib/editor/atto/plugins/generico
+	url = https://github.com/justinhunt/moodle-atto_generico
+[submodule "lib/editor/atto/plugins/htmlplus"]
+	path = lib/editor/atto/plugins/htmlplus
+	url = https://github.com/andrewnicols/moodle-atto_htmlplus
+[submodule "lib/editor/atto/plugins/pastespecial"]
+	path = lib/editor/atto/plugins/pastespecial
+	url = https://github.com/cdsmith-umn/pastespecial
+[submodule "local/ltiprovider"]
+	path = local/ltiprovider
+	url = https://github.com/jleyva/moodle-local_ltiprovider
+[submodule "msdlt_code/jquery_figure_image_swap"]
+	path = msdlt_code/jquery_figure_image_swap
+	url = https://github.com/whanrott/jquery_figure_image_swap
+[submodule "msdlt_code/iframe-resizer"]
+	path = msdlt_code/iframe-resizer
+	url = http://github.com/davidjbradshaw/iframe-resizer
+[submodule "msdlt_code/iframe_preview_files"]
+	path = msdlt_code/iframe_preview_files
+	url = https://github.com/msdlt/moodle_iframe_preview_files
+[submodule "question/behaviour/adaptivemultipart"]
+	path = question/behaviour/adaptivemultipart
+	url = https://github.com/maths/moodle-qbehaviour_adaptivemultipart
+[submodule "question/behaviour/dfcbmexplicitvaildate"]
+	path = question/behaviour/dfcbmexplicitvaildate
+	url = https://github.com/maths/moodle-qbehaviour_dfcbmexplicitvaildate
+[submodule "question/behaviour/dfexplicitvaildate"]
+	path = question/behaviour/dfexplicitvaildate
+	url = https://github.com/maths/moodle-qbehaviour_dfexplicitvaildate
+[submodule "question/type/ordering"]
+	path = question/type/ordering
+	url = https://github.com/gbateson/moodle-qtype_ordering
+[submodule "question/type/oumultiresponse"]
+	path = question/type/oumultiresponse
+	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
+[submodule "question/type/stack"]
+	path = question/type/stack
+	url = https://github.com/maths/moodle-qtype_stack
