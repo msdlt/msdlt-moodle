@@ -1,4 +1,4 @@
-@qtype @qtype_ddimageortext @_switch_window
+@ou @ou_vle @qtype @qtype_ddimageortext
 Feature: Preview a drag-drop onto image question
   As a teacher
   In order to check my drag-drop onto image questions will work for students
@@ -24,14 +24,10 @@ Feature: Preview a drag-drop onto image question
     And I follow "Course 1"
     And I navigate to "Question bank" node in "Course administration"
 
-  @javascript @_bug_phantomjs
+  @javascript
   Scenario: Preview a question using the mouse.
     When I click on "Preview" "link" in the "Drag onto image" "table_row"
     And I switch to "questionpreview" window
-    # Increase window size and wait 2 seconds to ensure elements are placed properly by js.
-    # Keep window large else drag will scroll the window to find element.
-    And I change window size to "large"
-    And I wait "2" seconds
     # Odd, but the <br>s go to nothing, not a space.
     And I drag "mountainbelt" to place "1" in the drag and drop onto image question
     And I drag "continentalshelf" to place "2" in the drag and drop onto image question
@@ -44,15 +40,11 @@ Feature: Preview a drag-drop onto image question
     And I press "Submit and finish"
     Then the state of "Identify the features" question is shown as "Correct"
     And I should see "Mark 1.00 out of 1.00"
-    And I switch to the main window
 
   @javascript
   Scenario: Preview a question using the keyboard.
     When I click on "Preview" "link" in the "Drag onto image" "table_row"
     And I switch to "questionpreview" window
-    # Increase window size and wait 2 seconds to ensure elements are placed properly by js.
-    And I change window size to "large"
-    And I wait "2" seconds
     And I type "       " on place "1" in the drag and drop onto image question
     And I type "       " on place "2" in the drag and drop onto image question
     And I type "     " on place "3" in the drag and drop onto image question
@@ -64,4 +56,3 @@ Feature: Preview a drag-drop onto image question
     And I press "Submit and finish"
     Then the state of "Identify the features" question is shown as "Correct"
     And I should see "Mark 1.00 out of 1.00"
-    And I switch to the main window

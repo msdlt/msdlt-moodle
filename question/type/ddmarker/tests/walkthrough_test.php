@@ -132,6 +132,8 @@ class qtype_ddmarker_walkthrough_test extends qbehaviour_walkthrough_test_base {
                 $this->get_contains_hidden_expectation(2, '100,250'),
                 $this->get_contains_hidden_expectation(3, '150,250'),
                 $this->get_contains_try_again_button_expectation(true),
+                new question_pattern_expectation('/' .
+                        preg_quote(get_string('notcomplete', 'qbehaviour_interactive'), '/') . '/'),
                 $this->get_contains_hint_expectation('This is the first hint'));
 
         // Do try again.
@@ -168,7 +170,7 @@ class qtype_ddmarker_walkthrough_test extends qbehaviour_walkthrough_test_base {
                 $this->get_contains_hidden_expectation(1, '50,50'),
                 $this->get_contains_hidden_expectation(2, '150,50'),
                 $this->get_contains_hidden_expectation(3, '100,150'),
-                $this->get_does_not_contain_submit_button_expectation(),
+                $this->get_contains_submit_button_expectation(false),
                 $this->get_contains_correct_expectation(),
                 $this->get_no_hint_visible_expectation());
 
@@ -399,9 +401,11 @@ class qtype_ddmarker_walkthrough_test extends qbehaviour_walkthrough_test_base {
                 $this->get_contains_draggable_marker_home_expectation(1, false),
                 $this->get_contains_draggable_marker_home_expectation(2, false),
                 $this->get_contains_draggable_marker_home_expectation(3, false),
-                $this->get_does_not_contain_submit_button_expectation(),
+                $this->get_contains_submit_button_expectation(false),
                 $this->get_contains_try_again_button_expectation(true),
                 $this->get_does_not_contain_correctness_expectation(),
+                new question_pattern_expectation('/' .
+                        preg_quote(get_string('notcomplete', 'qbehaviour_interactive'), '/') . '/'),
                 $this->get_contains_hint_expectation('This is the first hint'),
                 $this->get_contains_num_parts_correct(2),
                 $this->get_contains_standard_partiallycorrect_combined_feedback_expectation(),
@@ -448,9 +452,11 @@ class qtype_ddmarker_walkthrough_test extends qbehaviour_walkthrough_test_base {
                 $this->get_contains_draggable_marker_home_expectation(1, false),
                 $this->get_contains_draggable_marker_home_expectation(2, false),
                 $this->get_contains_draggable_marker_home_expectation(3, false),
-                $this->get_does_not_contain_submit_button_expectation(),
+                $this->get_contains_submit_button_expectation(false),
                 $this->get_contains_try_again_button_expectation(true),
                 $this->get_does_not_contain_correctness_expectation(),
+                new question_pattern_expectation('/' .
+                        preg_quote(get_string('notcomplete', 'qbehaviour_interactive'), '/') . '/'),
                 $this->get_contains_hint_expectation('This is the second hint'),
                 $this->get_contains_num_parts_correct(2),
                 $this->get_contains_standard_partiallycorrect_combined_feedback_expectation(),
@@ -493,7 +499,7 @@ class qtype_ddmarker_walkthrough_test extends qbehaviour_walkthrough_test_base {
                 $this->get_contains_hidden_expectation(1, '50,50'),
                 $this->get_contains_hidden_expectation(2, '150,50'),
                 $this->get_contains_hidden_expectation(3, '100,150'),
-                $this->get_does_not_contain_submit_button_expectation(),
+                $this->get_contains_submit_button_expectation(false),
                 $this->get_does_not_contain_try_again_button_expectation(),
                 $this->get_contains_correct_expectation(),
                 $this->get_no_hint_visible_expectation(),
@@ -542,7 +548,7 @@ class qtype_ddmarker_walkthrough_test extends qbehaviour_walkthrough_test_base {
                 $this->get_contains_draggable_marker_home_expectation(1, false),
                 $this->get_contains_draggable_marker_home_expectation(2, false),
                 $this->get_contains_draggable_marker_home_expectation(3, false),
-                $this->get_does_not_contain_submit_button_expectation(),
+                $this->get_contains_submit_button_expectation(false),
                 $this->get_contains_correct_expectation(),
                 $this->get_no_hint_visible_expectation());
 
@@ -597,7 +603,7 @@ class qtype_ddmarker_walkthrough_test extends qbehaviour_walkthrough_test_base {
                 $this->get_contains_draggable_marker_home_expectation(1, false),
                 $this->get_contains_draggable_marker_home_expectation(2, false),
                 $this->get_contains_draggable_marker_home_expectation(3, false),
-                $this->get_does_not_contain_submit_button_expectation(),
+                $this->get_contains_submit_button_expectation(false),
                 $this->get_contains_partcorrect_expectation(),
                 $this->get_no_hint_visible_expectation());
 
@@ -651,7 +657,7 @@ class qtype_ddmarker_walkthrough_test extends qbehaviour_walkthrough_test_base {
                 $this->get_contains_draggable_marker_home_expectation(1, false),
                 $this->get_contains_draggable_marker_home_expectation(2, false),
                 $this->get_contains_draggable_marker_home_expectation(3, false),
-                $this->get_does_not_contain_submit_button_expectation(),
+                $this->get_contains_submit_button_expectation(false),
                 $this->get_contains_hint_expectation('This is the first hint'));
 
         // Do try again.
