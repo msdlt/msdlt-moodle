@@ -40,3 +40,6 @@
 [submodule "question/type/stack"]
 	path = question/type/stack
 	url = https://github.com/maths/moodle-qtype_stack
+[submodule "lib/editor/atto/plugins/getquestion"]
+	path = lib/editor/atto/plugins/getquestion
+	url = https://github.com/msdlt/moodle-atto-getquestion/

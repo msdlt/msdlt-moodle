@@ -86,6 +86,14 @@ module.exports = function(grunt) {
                 options: {
                     compress: true
                 }
+           },
+           cerulean: {
+               files: {
+                    "theme/cerulean/style/custom.css": "theme/cerulean/less/cerulean.less"
+               },
+               options: {
+                     compress: true
+               }
            }
         },
         watch: {
@@ -246,6 +254,7 @@ module.exports = function(grunt) {
 
     // Register CSS taks.
     grunt.registerTask('css', ['less:bootstrapbase']);
+    grunt.registerTask('css', ['less:cerulean']);
 
     // Register the startup task.
     grunt.registerTask('startup', 'Run the correct tasks for the current directory', tasks.startup);
