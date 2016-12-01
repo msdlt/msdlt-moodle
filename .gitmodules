@@ -46,3 +46,9 @@
 [submodule "lib/editor/atto/plugins/figure"]
 	path = lib/editor/atto/plugins/figure
 	url = https://github.com/whanrott/moodle_atto_plugin_figure
+[submodule "blocks/panopto"]
+	path = blocks/panopto
+	url = https://github.com/Panopto/Moodle-2.0-Plugin-for-Panopto
+[submodule "mod/panopto"]
+	path = mod/panopto
+	url = https://github.com/lucisgit/moodle-mod_panopto
