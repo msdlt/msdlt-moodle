@@ -62,18 +62,20 @@ abstract class base {
      * Provide the result information for the specified result records.
      *
      * @param int|array $rids - A single response id, or array.
+     * @param boolean $anonymous - Whether or not responses are anonymous.
      * @return array - Array of data records.
      */
-    abstract protected function get_results($rids=false);
+    abstract protected function get_results($rids=false, $anonymous=false);
 
     /**
      * Provide the result information for the specified result records.
      *
      * @param int|array $rids - A single response id, or array.
      * @param string $sort - Optional display sort.
+     * @param boolean $anonymous - Whether or not responses are anonymous.
      * @return string - Display output.
      */
-    abstract public function display_results($rids=false, $sort='');
+    abstract public function display_results($rids=false, $sort='', $anonymous=false);
 
     protected function display_response_choice_results($rows, $rids, $sort) {
         if (is_array($rids)) {
@@ -178,7 +180,13 @@ abstract class base {
         foreach ($extraselectfields as $field => $include) {
             $extraselect .= $extraselect === '' ? '' : ', ';
             if ($include) {
-                $extraselect .= $alias . '.' . $field;
+                // The 'response' field can be varchar or text, which doesn't work for all DB's (Oracle).
+                // So convert the text if needed.
+                if ($field === 'response') {
+                    $extraselect .= $DB->sql_order_by_text($alias . '.' . $field, 1000).' AS '.$field;
+                } else {
+                    $extraselect .= $alias . '.' . $field;
+                }
             } else {
                 $default = $field === 'response' ? 'null' : 0;
                 $extraselect .= $default.' AS ' . $field;
