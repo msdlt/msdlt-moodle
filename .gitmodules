@@ -1,48 +1,63 @@
 [submodule "filter/generico"]
 	path = filter/generico
 	url = https://github.com/justinhunt/moodle-filter_generico
+        branch = master
 [submodule "lib/editor/atto/plugins/generico"]
 	path = lib/editor/atto/plugins/generico
 	url = https://github.com/justinhunt/moodle-atto_generico
+        branch = master
 [submodule "lib/editor/atto/plugins/htmlplus"]
 	path = lib/editor/atto/plugins/htmlplus
 	url = https://github.com/andrewnicols/moodle-atto_htmlplus
+        branch = master
 [submodule "lib/editor/atto/plugins/pastespecial"]
 	path = lib/editor/atto/plugins/pastespecial
 	url = https://github.com/cdsmith-umn/pastespecial
+        branch = master
 [submodule "local/ltiprovider"]
 	path = local/ltiprovider
 	url = https://github.com/jleyva/moodle-local_ltiprovider
+        branch = MOODLE_29_STABLE
 [submodule "msdlt_code/jquery_figure_image_swap"]
 	path = msdlt_code/jquery_figure_image_swap
 	url = https://github.com/whanrott/jquery_figure_image_swap
+        branch = master
 [submodule "msdlt_code/iframe-resizer"]
 	path = msdlt_code/iframe-resizer
 	url = http://github.com/davidjbradshaw/iframe-resizer
+        branch = master
 [submodule "msdlt_code/iframe_preview_files"]
 	path = msdlt_code/iframe_preview_files
 	url = https://github.com/msdlt/moodle_iframe_preview_files
+        branch = master
 [submodule "question/behaviour/adaptivemultipart"]
 	path = question/behaviour/adaptivemultipart
 	url = https://github.com/maths/moodle-qbehaviour_adaptivemultipart
+        branch = master
 [submodule "question/behaviour/dfcbmexplicitvaildate"]
 	path = question/behaviour/dfcbmexplicitvaildate
 	url = https://github.com/maths/moodle-qbehaviour_dfcbmexplicitvaildate
+        branch = master
 [submodule "question/behaviour/dfexplicitvaildate"]
 	path = question/behaviour/dfexplicitvaildate
 	url = https://github.com/maths/moodle-qbehaviour_dfexplicitvaildate
+        branch = master
 [submodule "question/type/ordering"]
 	path = question/type/ordering
 	url = https://github.com/gbateson/moodle-qtype_ordering
+        branch = master
 [submodule "question/type/oumultiresponse"]
 	path = question/type/oumultiresponse
 	url = https://github.com/moodleou/moodle-qtype_oumultiresponse
+        branch = master
 [submodule "question/type/stack"]
 	path = question/type/stack
 	url = https://github.com/maths/moodle-qtype_stack
+        branch = master
 [submodule "lib/editor/atto/plugins/getquestion"]
 	path = lib/editor/atto/plugins/getquestion
 	url = https://github.com/msdlt/moodle-atto-getquestion/
+        branch = master
 [submodule "lib/editor/atto/plugins/figure"]
 	path = lib/editor/atto/plugins/figure
 	url = https://github.com/whanrott/moodle_atto_plugin_figure
