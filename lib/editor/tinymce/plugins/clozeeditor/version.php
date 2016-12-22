@@ -25,9 +25,12 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$plugin->version   = 2016120500;
+$plugin->requires  = 2016112900;
 
-$plugin->version = 2014030600;
-$plugin->requires = 2012112900; 
-$plugin->component = 'tinymce_clozeeditor';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.0';
+$plugin->component = 'qtype_ddwtos';
+$plugin->maturity  = MATURITY_STABLE;
+
+$plugin->dependencies = array(
+    'qtype_gapselect' => 2016112900,
+);

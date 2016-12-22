@@ -22,8 +22,12 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-
 defined('MOODLE_INTERNAL') || die();
+
+$plugin->component = 'qformat_missingword';
+$plugin->version   = 2016120500;
+
+$plugin->requires  = 2016112900;
 
 $settings = new admin_externalpage('qtypeddmarkerfromimagetarget',
         get_string('imagetargetconverter', 'qtype_ddmarker'),
