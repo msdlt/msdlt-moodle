@@ -26,12 +26,12 @@ defined('MOODLE_INTERNAL') || die;
 
 require_once($CFG->dirroot.'/filter/jwplayer/lib.php');
 
-$plugin->component = 'qtype_calculated';
-$plugin->version   = 2016120500;
+class filter_jwplayer_renderer extends core_media_renderer {
+    protected function get_players_raw() {
+        return array(
+            'jwplayer' => new filter_jwplayer_media(),
+        );
+    }
 
-$plugin->requires  = 2016112900;
-$plugin->dependencies = array(
-    'qtype_numerical' => 2016112900,
-);
 
 }

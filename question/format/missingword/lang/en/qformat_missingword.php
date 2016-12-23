@@ -15,19 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin for Moodle tinymce clozeeditor.
+ * Strings for component 'qformat_missingword', language 'en', branch 'MOODLE_20_STABLE'
  *
- * @package    tiny_mce
- * @subpackage clozeeditor
- * @copyright  2013 Andreas Glombitza/Achim Skuta
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    qformat_missingword
+ * @copyright  2010 Helen Foster
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
-
-$plugin->version = 2014030600;
-$plugin->requires = 2012112900; 
-$plugin->component = 'tinymce_clozeeditor';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.0';
+$string['pluginname'] = 'Missing word format';
+$string['pluginname_help'] = 'Missing word format enables questions to be imported via text file.';
+$string['pluginname_link'] = 'Missing word format';
+$string['beginanswernotfound'] = 'Could not find a required "{" character in imported file content.';
+$string['endanswernotfound'] = 'Could not find a required "}" character in imported file content.';
+$string['noanswerfound'] = 'No answers found in question';

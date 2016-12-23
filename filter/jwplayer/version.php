@@ -25,13 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'qtype_calculatedsimple';
-$plugin->version   = 2016120500;
-
-$plugin->requires  = 2016112900;
-$plugin->dependencies = array(
-    'qtype_numerical'  => 2016112900,
-    'qtype_calculated' => 2016112900,
-);
-
-$plugin->maturity  = MATURITY_STABLE;
+$plugin->version   = 2016041900;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires  = 2015051100;        // Requires Moodle 2.9
+$plugin->component = 'filter_jwplayer'; // Full name of the plugin (used for diagnostics).
+$plugin->maturity = MATURITY_STABLE;
+$plugin->release   = '7-0.5 for Moodle 2.9+, JW7 CDN 7.3.6)';

@@ -24,11 +24,16 @@ defined('MOODLE_INTERNAL') || die();
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-    // Moodle v3.1.0 release upgrade line.
-    // Put any upgrade step following this.
-
-    // Automatically generated Moodle v3.2.0 release upgrade line.
-    // Put any upgrade step following this.
-
-    return true;
+class theme_cerulean_core_renderer extends theme_bootstrap_core_renderer {
+    public function full_header() {
+        global $PAGE;
+        if (!empty($PAGE->theme->settings->logo) &&
+            ($PAGE->pagelayout == 'frontpage' || $PAGE->pagelayout == 'login')) {
+            $fullheader = html_writer::tag('div', '', array('class' => 'logo'));
+            $fullheader .= html_writer::tag('div', '', array('class' => 'clearfix'));
+        } else {
+            $fullheader = parent::full_header();
+        }
+        return $fullheader;
+    }
 }

@@ -15,19 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin for Moodle tinymce clozeeditor.
+ * Version information for the calculated question type.
  *
- * @package    tiny_mce
- * @subpackage clozeeditor
- * @copyright  2013 Andreas Glombitza/Achim Skuta
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    qformat_missingword
+ * @copyright  2011 The Open University
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
+$plugin->component = 'qformat_missingword';
+$plugin->version   = 2016120500;
 
-$plugin->version = 2014030600;
-$plugin->requires = 2012112900; 
-$plugin->component = 'tinymce_clozeeditor';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->release = '1.0';
+$plugin->requires  = 2016112900;
+
+$plugin->maturity  = MATURITY_STABLE;
