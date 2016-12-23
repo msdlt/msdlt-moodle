@@ -20,7 +20,7 @@
         branch = MOODLE_29_STABLE
 [submodule "msdlt_code/jquery_figure_image_swap"]
 	path = msdlt_code/jquery_figure_image_swap
-	url = https://github.com/whanrott/jquery_figure_image_swap
+	url = https://github.com/msdlt/jquery_figure_image_swap
         branch = master
 [submodule "msdlt_code/iframe-resizer"]
 	path = msdlt_code/iframe-resizer
@@ -60,7 +60,7 @@
         branch = master
 [submodule "lib/editor/atto/plugins/figure"]
 	path = lib/editor/atto/plugins/figure
-	url = https://github.com/whanrott/moodle_atto_plugin_figure
+	url = https://github.com/msdlt/moodle_atto_plugin_figure
         branch = master
 [submodule "blocks/panopto"]
 	path = blocks/panopto
