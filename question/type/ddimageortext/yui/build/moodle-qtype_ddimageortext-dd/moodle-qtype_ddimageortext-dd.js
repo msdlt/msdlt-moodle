@@ -174,7 +174,6 @@ Y.extend(DDIMAGEORTEXT_DD, Y.Base, {
 
                 drag.setData('group', group);
                 drag.setData('choice', choice);
-
             },
             draggable_for_form: function(drag) {
                 var dd = new Y.DD.Drag({
@@ -250,14 +249,15 @@ var DDIMAGEORTEXT_QUESTION = function() {
  * This is the code for question rendering.
  */
 Y.extend(DDIMAGEORTEXT_QUESTION, M.qtype_ddimageortext.dd_base_class, {
+    touchscrolldisable: null,
     pendingid: '',
     initializer: function() {
         this.pendingid = 'qtype_ddimageortext-' + Math.random().toString(36).slice(2); // Random string.
         M.util.js_pending(this.pendingid);
         this.doc = this.doc_structure(this);
-        this.poll_for_image_load(null, false, 0, this.create_all_drag_and_drops);
+        this.poll_for_image_load(null, false, 10, this.create_all_drag_and_drops);
         this.doc.bg_img().after('load', this.poll_for_image_load, this,
-                                                false, 0, this.create_all_drag_and_drops);
+                                                false, 10, this.create_all_drag_and_drops);
         this.doc.drag_item_homes().after('load', this.poll_for_image_load, this,
                                                 false, 10, this.create_all_drag_and_drops);
         if (!this.get('readonly')) {
@@ -313,6 +313,9 @@ Y.extend(DDIMAGEORTEXT_QUESTION, M.qtype_ddimageortext.dd_base_class, {
             i++;
             if (!this.get('readonly')) {
                 this.doc.draggable_for_question(dragnode, group, choice);
+
+                // Prevent scrolling whilst dragging on Adroid devices.
+                this.prevent_touchmove_from_scrolling(dragnode);
             }
             if (dragnode.hasClass('infinite')) {
                 var dragstocreate = groupsize - 1;
@@ -321,6 +324,9 @@ Y.extend(DDIMAGEORTEXT_QUESTION, M.qtype_ddimageortext.dd_base_class, {
                     i++;
                     if (!this.get('readonly')) {
                         this.doc.draggable_for_question(dragnode, group, choice);
+
+                        // Prevent scrolling whilst dragging on Adroid devices.
+                        this.prevent_touchmove_from_scrolling(dragnode);
                     }
                     dragstocreate--;
                 }
@@ -435,6 +441,9 @@ Y.extend(DDIMAGEORTEXT_QUESTION, M.qtype_ddimageortext.dd_base_class, {
                 dragitem.setXY(dragitemhome.getXY());
             }
         }, this);
+        if (dotimeout) {
+            Y.later(500, this, this.reposition_drags_for_question, true);
+        }
     },
     get_choices_for_drop: function(choice, drop) {
         var group = drop.getData('group');

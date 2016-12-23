@@ -24,7 +24,6 @@
  */
 
 // NOTE: no MOODLE_INTERNAL test here, this file may be required by behat before including /config.php.
-use Behat\Mink\Exception\ElementNotFoundException as ElementNotFoundException;
 
 use Behat\Mink\Exception\ElementNotFoundException as ElementNotFoundException;
 

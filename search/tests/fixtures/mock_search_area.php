@@ -36,12 +36,6 @@ class mock_search_area extends \core_search\base {
     protected static $levels = [CONTEXT_SYSTEM, CONTEXT_USER];
 
     /**
-     * Multiple context level so we can test get_areas_user_accesses.
-     * @var int[]
-     */
-    protected static $levels = [CONTEXT_SYSTEM, CONTEXT_USER];
-
-    /**
      * To make things easier, base class required config stuff.
      *
      * @return bool

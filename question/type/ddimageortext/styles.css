@@ -25,7 +25,6 @@ form.mform fieldset#id_previewareaheader div.draghome {
     height: auto;
     width: auto;
     zoom: 1;
-    *display: inline;
 }
 
 .que.ddimageortext .group1,
@@ -95,6 +94,7 @@ form.mform fieldset#id_previewareaheader .dropbackground {
     z-index: 1;
 }
 
+.que.ddimageortext .dropzone:focus,
 .que.ddimageortext .dropzone.yui3-dd-drop-over.yui3-dd-drop-active-valid {
     border-color: #0a0;
     box-shadow: 0 0 5px 5px rgba(255, 255, 150, 1);
@@ -110,13 +110,7 @@ form.mform fieldset#id_previewareaheader div.drag {
 form.mform fieldset#id_previewareaheader div.drag.yui3-dd-dragging,
 .que.ddimageortext div.drag.yui3-dd-dragging {
     z-index: 3;
-    -moz-box-shadow: 3px 3px 4px #000;
-    -webkit-box-shadow: 3px 3px 4px #000;
     box-shadow: 3px 3px 4px #000;
-    /* For IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
-    /* For IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }
 /* Editing form. Style repeated elements*/
 /*Top*/

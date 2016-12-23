@@ -308,6 +308,7 @@ var DDMARKER_QUESTION = function() {
  * This is the code for question rendering.
  */
 Y.extend(DDMARKER_QUESTION, M.qtype_ddmarker.dd_base_class, {
+    touchscrolldisable: null,
     pendingid: '',
     initializer: function() {
         this.pendingid = 'qtype_ddmarker-' + Math.random().toString(36).slice(2); // Random string.
@@ -393,6 +394,9 @@ Y.extend(DDMARKER_QUESTION, M.qtype_ddmarker.dd_base_class, {
         // --- keyboard accessibility
         drag.set('tabIndex', 0);
         drag.on('dragchange', this.drop_zone_key_press, this);
+
+        // Prevent scrolling whilst dragging on Adroid devices.
+        this.prevent_touchmove_from_scrolling(drag);
     },
 
     save_all_xy_for_choice: function(choiceno, dropped) {

@@ -30,4 +30,3 @@ define(function() {
         EXPAND_GRADE_PANEL: 'grading:expand-grade-panel',
     };
 });
-

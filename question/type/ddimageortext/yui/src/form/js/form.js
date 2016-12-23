@@ -58,10 +58,11 @@ Y.extend(DDIMAGEORTEXT_FORM, M.qtype_ddimageortext.dd_base_class, {
                                     .on('load', this.constrain_image_size, this, 'dragimage');
             this.doc.bg_img().after('load', this.poll_for_image_load, this,
                                                     true, 0, this.after_all_images_loaded);
-            this.doc.drag_item_homes() .after('load', this.poll_for_image_load, this,
+            this.doc.drag_item_homes().after('load', this.poll_for_image_load, this,
                                                     true, 0, this.after_all_images_loaded);
         } else {
             this.setup_form_events();
+            M.util.js_complete(this.pendingid);
         }
         this.update_visibility_of_file_pickers();
     },
@@ -142,13 +143,9 @@ Y.extend(DDIMAGEORTEXT_FORM, M.qtype_ddimageortext.dd_base_class, {
                     if (value !== 0) { // No item option is always selectable.
                         var cbel = Y.one('#id_drags_' + (value - 1) + '_infinite');
                         if (cbel && !cbel.get('checked')) {
-                            Y.all('fieldset#id_dropzoneheader select').some(function (selector) {
-                                if (Number(selector.get('value')) === value) {
-                                    optionnode.set('disabled', true);
-                                    return true; // Stop looping.
-                                }
-                                return false;
-                            }, this);
+                            if (this.item_is_allocated_to_dropzone(value)) {
+                                optionnode.set('disabled', true);
+                            }
                         }
                     }
                 }
@@ -200,16 +197,8 @@ Y.extend(DDIMAGEORTEXT_FORM, M.qtype_ddimageortext.dd_base_class, {
 
         for (var i = 0; i < this.form.get_form_value('noitems', []); i++) {
             // Change to group selector.
-            Y.all('#fgroup_id_drags_' + i + ' select.draggroup').on(
-                    'change', function () {
-                this.doc.drag_items().remove(true);
-                this.draw_dd_area();
-            }, this);
-            Y.all('#fgroup_id_drags_' + i + ' select.dragitemtype').on(
-                    'change', function () {
-                this.doc.drag_items().remove(true);
-                this.draw_dd_area();
-            }, this);
+            Y.all('#fgroup_id_drags_' + i + ' select.draggroup').on('change', this.redraw_dd_area, this);
+            Y.all('#fgroup_id_drags_' + i + ' select.dragitemtype').on('change', this.redraw_dd_area, this);
             Y.all('fieldset#draggableitemheader_' + i + ' input[type="text"]')
                                 .on('blur', this.set_options_for_drag_item_selectors, this);
             // Change to infinite checkbox.
@@ -253,6 +242,7 @@ Y.extend(DDIMAGEORTEXT_FORM, M.qtype_ddimageortext.dd_base_class, {
             var draginstanceno = drag.getData('draginstanceno');
             this.reposition_drag_for_form(draginstanceno);
         }, this);
+        M.util.js_complete(this.pendingid);
     },
 
     reposition_drag_for_form: function(draginstanceno) {
@@ -372,4 +362,3 @@ M.qtype_ddimageortext = M.qtype_ddimageortext || {};
 M.qtype_ddimageortext.init_form = function(config) {
     return new DDIMAGEORTEXT_FORM(config);
 };
-

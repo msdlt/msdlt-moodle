@@ -1,4 +1,4 @@
-@ou @ou_vle @qtype @qtype_ddmarker
+@qtype @qtype_ddmarker
 Feature: Test duplicating a quiz containing a drag and drop markers question
   As a teacher
   In order re-use my courses containing drag and drop markers questions
@@ -20,6 +20,7 @@ Feature: Test duplicating a quiz containing a drag and drop markers question
     And quiz "Test quiz" contains the following questions:
       | Drag markers | 1 |
     And I log in as "admin"
+    And I am on site homepage
     And I follow "Course 1"
 
   @javascript

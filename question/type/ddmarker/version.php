@@ -29,11 +29,8 @@ $plugin->requires  = 2016112900;
 
 $plugin->component = 'qtype_ddmarker';
 $plugin->maturity  = MATURITY_STABLE;
-$plugin->release   = '1.8 for Moodle 2.5+';
 
 $plugin->dependencies = array(
     'qtype_gapselect'     => 2016112900,
     'qtype_ddimageortext' => 2016112900,
 );
-
-$plugin->outestssufficient = true;

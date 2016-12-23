@@ -132,8 +132,6 @@ class qtype_ddimageortext_walkthrough_test extends qbehaviour_walkthrough_test_b
             $this->get_contains_hidden_expectation(
                 $this->quba->get_field_prefix($this->slot) . 'p4', 1),
             $this->get_contains_try_again_button_expectation(true),
-            new question_pattern_expectation('/' .
-                preg_quote(get_string('notcomplete', 'qbehaviour_interactive'), '/') . '/'),
             $this->get_contains_hint_expectation('This is the first hint'));
 
         // Do try again.
@@ -182,7 +180,7 @@ class qtype_ddimageortext_walkthrough_test extends qbehaviour_walkthrough_test_b
                 $this->quba->get_field_prefix($this->slot) . 'p3', '1'),
             $this->get_contains_hidden_expectation(
                 $this->quba->get_field_prefix($this->slot) . 'p4', '2'),
-            $this->get_contains_submit_button_expectation(false),
+            $this->get_does_not_contain_submit_button_expectation(),
             $this->get_contains_correct_expectation(),
             $this->get_no_hint_visible_expectation());
 
@@ -471,11 +469,9 @@ class qtype_ddimageortext_walkthrough_test extends qbehaviour_walkthrough_test_b
             $this->get_contains_drag_image_home_expectation(2, 2, 1),
             $this->get_contains_drag_image_home_expectation(3, 1, 2),
             $this->get_contains_drag_image_home_expectation(4, 2, 2),
-            $this->get_contains_submit_button_expectation(false),
+            $this->get_does_not_contain_submit_button_expectation(),
             $this->get_contains_try_again_button_expectation(true),
             $this->get_does_not_contain_correctness_expectation(),
-            new question_pattern_expectation('/' .
-                preg_quote(get_string('notcomplete', 'qbehaviour_interactive'), '/') . '/'),
             $this->get_contains_hint_expectation('This is the first hint'),
             $this->get_contains_num_parts_correct(2),
             $this->get_contains_standard_partiallycorrect_combined_feedback_expectation(),
@@ -534,11 +530,9 @@ class qtype_ddimageortext_walkthrough_test extends qbehaviour_walkthrough_test_b
             $this->get_contains_drag_image_home_expectation(2, 2, 1),
             $this->get_contains_drag_image_home_expectation(3, 1, 2),
             $this->get_contains_drag_image_home_expectation(4, 2, 2),
-            $this->get_contains_submit_button_expectation(false),
+            $this->get_does_not_contain_submit_button_expectation(),
             $this->get_contains_try_again_button_expectation(true),
             $this->get_does_not_contain_correctness_expectation(),
-            new question_pattern_expectation('/' .
-                preg_quote(get_string('notcomplete', 'qbehaviour_interactive'), '/') . '/'),
             $this->get_contains_hint_expectation('This is the second hint'),
             $this->get_contains_num_parts_correct(2),
             $this->get_contains_standard_partiallycorrect_combined_feedback_expectation(),
@@ -598,7 +592,7 @@ class qtype_ddimageortext_walkthrough_test extends qbehaviour_walkthrough_test_b
                 $this->quba->get_field_prefix($this->slot) . 'p3', 1),
             $this->get_contains_hidden_expectation(
                 $this->quba->get_field_prefix($this->slot) . 'p4', 2),
-            $this->get_contains_submit_button_expectation(false),
+            $this->get_does_not_contain_submit_button_expectation(),
             $this->get_does_not_contain_try_again_button_expectation(),
             $this->get_contains_correct_expectation(),
             $this->get_no_hint_visible_expectation(),
@@ -654,7 +648,7 @@ class qtype_ddimageortext_walkthrough_test extends qbehaviour_walkthrough_test_b
             $this->get_contains_drag_image_home_expectation(2, 2, 1),
             $this->get_contains_drag_image_home_expectation(3, 1, 2),
             $this->get_contains_drag_image_home_expectation(4, 2, 2),
-            $this->get_contains_submit_button_expectation(false),
+            $this->get_does_not_contain_submit_button_expectation(),
             $this->get_contains_correct_expectation(),
             $this->get_no_hint_visible_expectation());
 
@@ -716,7 +710,7 @@ class qtype_ddimageortext_walkthrough_test extends qbehaviour_walkthrough_test_b
             $this->get_contains_drag_image_home_expectation(2, 2, 1),
             $this->get_contains_drag_image_home_expectation(3, 1, 2),
             $this->get_contains_drag_image_home_expectation(4, 2, 2),
-            $this->get_contains_submit_button_expectation(false),
+            $this->get_does_not_contain_submit_button_expectation(),
             $this->get_contains_partcorrect_expectation(),
             $this->get_no_hint_visible_expectation());
 
@@ -775,7 +769,7 @@ class qtype_ddimageortext_walkthrough_test extends qbehaviour_walkthrough_test_b
             $this->get_contains_drag_image_home_expectation(2, 2, 1),
             $this->get_contains_drag_image_home_expectation(3, 1, 2),
             $this->get_contains_drag_image_home_expectation(4, 2, 2),
-            $this->get_contains_submit_button_expectation(false),
+            $this->get_does_not_contain_submit_button_expectation(),
             $this->get_contains_hint_expectation('This is the first hint'));
 
         // Do try again.

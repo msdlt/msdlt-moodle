@@ -520,14 +520,6 @@
 .path-mod-assign [data-region="review-panel"] .pageheader {
     border-right: 1px solid #ddd;
 }
-.path-mod-assign [data-region="review-panel"] + [data-region="grade-panel"] [data-region="grade"] {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    -webkit-transition: max-width 0.5s;
-       -moz-transition: max-width 0.5s;
-            transition: max-width 0.5s;
-}
 
 .path-mod-assign [data-region="review-panel"] + [data-region="grade-panel"] [data-region="grade"] {
     margin-left: auto;
@@ -1164,31 +1156,6 @@
     .path-mod-assign [data-region="user-selector"] .alignment {
         float: none;
         margin: 0 auto 10px;
-    }
-    .dir-rtl.path-mod-assign [data-region="review-panel"] .pageheader {
-        padding-right: 40px;
-        padding-left: 20px;
-    }
-    .dir-rtl.path-mod-assign [data-region="review-panel"] [data-region="review-panel-toggle"] {
-        left: auto;
-        right: 0;
-        border-radius: 0 0 0 4px;
-    }
-    .dir-rtl.path-mod-assign [data-region="review-panel"].collapsed {
-        right: 0;
-        left: auto;
-    }
-    .dir-rtl.path-mod-assign [data-region="review-panel"] [data-region="review-panel-toggle"] .expand-icon .ltr-icon {
-        display: none;
-    }
-    .dir-rtl.path-mod-assign [data-region="review-panel"] [data-region="review-panel-toggle"] .expand-icon .rtl-icon {
-        display: block;
-    }
-    .dir-rtl.path-mod-assign [data-region="review-panel"].collapsed [data-region="review-panel-toggle"] .collapse-icon {
-        display: none;
-    }
-    .dir-rtl.path-mod-assign [data-region="review-panel"].collapsed [data-region="review-panel-toggle"] .expand-icon {
-        display: block;
     }
 }
 
