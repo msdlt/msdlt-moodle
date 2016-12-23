@@ -25,14 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'qtype_calculatedmulti';
-$plugin->version   = 2016120500;
-
-$plugin->requires  = 2016112900;
-$plugin->dependencies = array(
-    'qtype_numerical'   => 2016112900,
-    'qtype_calculated'  => 2016112900,
-    'qtype_multichoice' => 2016112900,
+$logs = array(
+    array('module' => 'questionnaire', 'action' => 'view all', 'mtable' => 'questionnaire', 'field' => 'name'),
+    array('module' => 'questionnaire', 'action' => 'submit', 'mtable' => 'questionnaire_attempts', 'field' => 'rid'),
+    array('module' => 'questionnaire', 'action' => 'view', 'mtable' => 'questionnaire', 'field' => 'name'),
 );
-
-$plugin->maturity  = MATURITY_STABLE;
